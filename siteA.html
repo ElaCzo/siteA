@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemple de page HTML</title>
+</head>
+<body>
+    
+    <script>
+        // Créer une requête XMLHttpRequest
+        var xhr = new XMLHttpRequest();
+        
+        // URL de l'image que vous souhaitez récupérer depuis images.cookiestatus.com
+        var imageUrl = 'https://images.cookiestatus.com/votre_image.jpg';
+        
+        // Ouvrir une requête GET vers l'image
+        xhr.open('GET', imageUrl, true);
+        
+        // Inclure les cookies avec la requête
+        xhr.withCredentials = true;
+        
+        // Fonction de rappel appelée lorsque la requête est terminée
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                // La requête a réussi, l'image a été récupérée avec succès
+                console.log('L\'image a été récupérée avec succès.');
+            } else {
+                // La requête a échoué, affichez un message d'erreur
+                console.error('Erreur lors de la récupération de l\'image.');
+            }
+        };
+        
+        // Gérer les erreurs de réseau
+        xhr.onerror = function () {
+            console.error('Erreur de réseau lors de la récupération de l\'image.');
+        };
+        
+        // Envoyer la requête
+        xhr.send();
+        
+    </script>
+    
+</body>
+</html>
+
+
