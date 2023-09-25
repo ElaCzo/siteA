@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Exemple CORS et Cookies</title>
-    <meta http-equiv="Content-Security-Policy" content="default-src *;">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline';">
 </head>
 <body>
     <h1 id="my_id">Appel Cross-Site (CORS) et Cookies</h1>
